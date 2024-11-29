@@ -17,7 +17,7 @@ const Register = () => {
     e.preventDefault();
     try {
       await axios.post(
-        "https://zenstudy-assignment-full-stack-l-git-47fab5-murali981s-projects.vercel.app/?vercelToolbarCode=CvulwOaDJG7Hhun/api/auth/register",
+        `${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/api/auth/register`,
         formData
       );
       toast.success("Registered successfully!", {

@@ -27,7 +27,7 @@ const Dashboard = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.get(
-        "https://zenstudy-assignment-full-stack-l-git-47fab5-murali981s-projects.vercel.app/?vercelToolbarCode=CvulwOaDJG7Hhun/api/contacts",
+        `${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/api/contacts`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -44,7 +44,9 @@ const Dashboard = () => {
     try {
       if (editingId) {
         await axios.put(
-          `https://zenstudy-assignment-full-stack-l-git-47fab5-murali981s-projects.vercel.app/?vercelToolbarCode=CvulwOaDJG7Hhun/api/contacts/${editingId}`,
+          `${
+            import.meta.env.VITE_REACT_APP_BACKEND_BASEURL
+          }/api/contacts/${editingId}`,
           formData,
           {
             headers: { Authorization: `Bearer ${token}` },
@@ -53,7 +55,7 @@ const Dashboard = () => {
         setEditingId(null);
       } else {
         await axios.post(
-          "https://zenstudy-assignment-full-stack-l-git-47fab5-murali981s-projects.vercel.app/?vercelToolbarCode=CvulwOaDJG7Hhun/api/contacts",
+          `${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/api/contacts`,
           formData,
           {
             headers: { Authorization: `Bearer ${token}` },
@@ -81,7 +83,7 @@ const Dashboard = () => {
     try {
       const token = localStorage.getItem("token");
       await axios.delete(
-        `https://zenstudy-assignment-full-stack-l-git-47fab5-murali981s-projects.vercel.app/?vercelToolbarCode=CvulwOaDJG7Hhun/api/contacts/${id}`,
+        `${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/api/contacts/${id}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
