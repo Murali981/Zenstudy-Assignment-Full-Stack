@@ -42,7 +42,7 @@ router.put("/:id", auth, async (req, res) => {
   try {
     const { name, mobile, email } = req.body;
 
-    console.log(req.params.id);
+    // console.log(req.params.id);
     // Find contact and update
     let contact = await Contact.findById(req.params.id);
     if (!contact) return res.status(404).json({ msg: "Contact not found" });
