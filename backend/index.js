@@ -29,13 +29,7 @@ mongoose
     console.log("Error");
   });
 
-app.use(
-  cors({
-    origin: "https://zenstudy-assignment-frontend.vercel.app/",
-    methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"], // Allows all common HTTP methods
-    credentials: true,
-  })
-);
+app.use(cors());
 
 app.get("/", (req, res) => {
   res.json("Hello World");
