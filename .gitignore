@@ -4,6 +4,8 @@ node_modules/
 
 # Environment files
 .env
+*/config.env
+config.env
 */.env
 
 # Build files
@@ -15,3 +17,4 @@ dist/
 # Misc
 .DS_Store
 .vscode/
+.vercel

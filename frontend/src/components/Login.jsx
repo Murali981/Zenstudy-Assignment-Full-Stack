@@ -10,11 +10,13 @@ const Login = () => {
   });
   const navigate = useNavigate();
 
+  axios.defaults.withCredentials = true;
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/auth/login",
+        "https://zenstudy-assignment-full-stack-lpx9.vercel.app/?vercelToolbarCode=2jNr3yuXL6yl9SM/api/auth/login",
         formData
       );
       localStorage.setItem("token", response.data.token);

@@ -11,10 +11,15 @@ const Register = () => {
   });
   const navigate = useNavigate();
 
+  axios.defaults.withCredentials = true;
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/auth/register", formData);
+      await axios.post(
+        "https://zenstudy-assignment-full-stack-lpx9.vercel.app/?vercelToolbarCode=2jNr3yuXL6yl9SM/api/auth/register",
+        formData
+      );
       toast.success("Registered successfully!", {
         duration: 3000,
         position: "top-center",

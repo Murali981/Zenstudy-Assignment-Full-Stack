@@ -12,6 +12,8 @@ const Dashboard = () => {
   });
   const [editingId, setEditingId] = useState(null);
 
+  axios.defaults.withCredentials = true;
+
   const handleLogout = () => {
     localStorage.removeItem("token");
     navigate("/login");
@@ -24,9 +26,12 @@ const Dashboard = () => {
   const fetchContacts = async () => {
     try {
       const token = localStorage.getItem("token");
-      const response = await axios.get("http://localhost:5000/api/contacts", {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      const response = await axios.get(
+        "https://zenstudy-assignment-full-stack-lpx9.vercel.app/?vercelToolbarCode=2jNr3yuXL6yl9SM/api/contacts",
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
       setContacts(response.data);
     } catch (error) {
       console.error("Error fetching contacts:", error);
@@ -39,7 +44,7 @@ const Dashboard = () => {
     try {
       if (editingId) {
         await axios.put(
-          `http://localhost:5000/api/contacts/${editingId}`,
+          `https://zenstudy-assignment-full-stack-lpx9.vercel.app/?vercelToolbarCode=2jNr3yuXL6yl9SM/api/contacts/${editingId}`,
           formData,
           {
             headers: { Authorization: `Bearer ${token}` },
@@ -47,9 +52,13 @@ const Dashboard = () => {
         );
         setEditingId(null);
       } else {
-        await axios.post("http://localhost:5000/api/contacts", formData, {
-          headers: { Authorization: `Bearer ${token}` },
-        });
+        await axios.post(
+          "https://zenstudy-assignment-full-stack-lpx9.vercel.app/?vercelToolbarCode=2jNr3yuXL6yl9SM/api/contacts",
+          formData,
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          }
+        );
       }
       setFormData({ name: "", mobile: "", email: "" });
       fetchContacts();
@@ -71,9 +80,12 @@ const Dashboard = () => {
   const handleDelete = async (id) => {
     try {
       const token = localStorage.getItem("token");
-      await axios.delete(`http://localhost:5000/api/contacts/${id}`, {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      await axios.delete(
+        `https://zenstudy-assignment-full-stack-lpx9.vercel.app/?vercelToolbarCode=2jNr3yuXL6yl9SM/api/contacts/${id}`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
       fetchContacts();
     } catch (error) {
       console.error("Error deleting contact:", error);
