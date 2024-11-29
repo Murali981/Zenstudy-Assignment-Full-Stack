@@ -55,5 +55,5 @@ app.use("/api/contacts", require("./routes/contacts"));
 // const PORT = process.env.PORT || 3000;
 
 app.listen(5000, () => {
-  console.log(`App is listening on port ${PORT}`);
+  console.log(`App is listening on port 5000`);
 });
