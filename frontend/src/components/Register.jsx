@@ -17,7 +17,7 @@ const Register = () => {
     e.preventDefault();
     try {
       await axios.post(
-        "https://zenstudy-assignment-full-stack-lpx9.vercel.app/?vercelToolbarCode=2jNr3yuXL6yl9SM/api/auth/register",
+        "https://zenstudy-assignment-full-stack-l-git-47fab5-murali981s-projects.vercel.app/?vercelToolbarCode=CvulwOaDJG7Hhun/api/auth/register",
         formData
       );
       toast.success("Registered successfully!", {
