@@ -1,24 +1,35 @@
 const mongoose = require("mongoose");
-const dotenv = require("dotenv");
+// const dotenv = require("dotenv");
 
-dotenv.config({ path: "./config.env" });
+// dotenv.config({ path: "./config.env" });
 
 const app = require("./app");
 
 const cors = require("cors");
 
-const DB = process.env.DATABASE.replace(
-  "<PASSWORD>",
-  process.env.DATABASE_PASSWORD
-);
+// const DB = process.env.DATABASE.replace(
+//   "<PASSWORD>",
+//   process.env.DATABASE_PASSWORD
+// );
+
+// mongoose
+//   .connect(DB, {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//     useCreateIndex: true,
+//     useFindAndModify: false,
+//   })
+//   .then(() => {
+//     console.log("DB Connection is successfully established");
+//   })
+//   .catch(() => {
+//     console.log("Error");
+//   });
 
 mongoose
-  .connect(DB, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify: false,
-  })
+  .connect(
+    "mongodb+srv://josephstalin981:44ExXa53icEPI84S@cluster0.1oz6m.mongodb.net/zenstudy?retryWrites=true"
+  )
   .then(() => {
     console.log("DB Connection is successfully established");
   })
