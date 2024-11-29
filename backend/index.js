@@ -11,7 +11,7 @@ const app = express();
 // app.use(cors());
 const options = [
   cors({
-    origin: "https://zenstudy-assignment-frontend1.onrender.com/",
+    origin: "*",
     methods: "*",
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
