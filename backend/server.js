@@ -26,16 +26,15 @@ const cors = require("cors");
 //     console.log("Error");
 //   });
 
-mongoose
-  .connect(
-    "mongodb+srv://josephstalin981:44ExXa53icEPI84S@cluster0.1oz6m.mongodb.net/zenstudy?retryWrites=true"
-  )
-  .then(() => {
-    console.log("DB Connection is successfully established");
-  })
-  .catch(() => {
-    console.log("Error");
-  });
+mongoose.connect(
+  "mongodb+srv://josephstalin981:44ExXa53icEPI84S@cluster0.1oz6m.mongodb.net/zenstudy?retryWrites=true"
+);
+// .then(() => {
+//   console.log("DB Connection is successfully established");
+// })
+// .catch(() => {
+//   console.log("Error");
+// });
 
 app.use(
   cors({
