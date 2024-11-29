@@ -1,69 +1,69 @@
-const mongoose = require("mongoose");
-const dotenv = require("dotenv");
+// const mongoose = require("mongoose");
+// const dotenv = require("dotenv");
 
-dotenv.config({ path: "./config.env" });
+// dotenv.config({ path: "./config.env" });
 
-const app = require("./app");
+// const app = require("./app");
 
-const cors = require("cors");
+// const cors = require("cors");
 
-const DB = process.env.DATABASE.replace(
-  "<PASSWORD>",
-  process.env.DATABASE_PASSWORD
-);
-
-mongoose
-  .connect(DB, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify: false,
-  })
-  .then(() => {
-    console.log("DB Connection is successfully established");
-  })
-  .catch(() => {
-    console.log("Error");
-  });
-
-// mongoose.connect(
-//   "mongodb+srv://josephstalin981:44ExXa53icEPI84S@cluster0.1oz6m.mongodb.net/zenstudy?retryWrites=true"
+// const DB = process.env.DATABASE.replace(
+//   "<PASSWORD>",
+//   process.env.DATABASE_PASSWORD
 // );
-// // .then(() => {
-// //   console.log("DB Connection is successfully established");
-// // })
-// // .catch(() => {
-// //   console.log("Error");
-// // });
+
+// mongoose
+//   .connect(DB, {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//     useCreateIndex: true,
+//     useFindAndModify: false,
+//   })
+//   .then(() => {
+//     console.log("DB Connection is successfully established");
+//   })
+//   .catch(() => {
+//     console.log("Error");
+//   });
+
+// // mongoose.connect(
+// //   "mongodb+srv://josephstalin981:44ExXa53icEPI84S@cluster0.1oz6m.mongodb.net/zenstudy?retryWrites=true"
+// // );
+// // // .then(() => {
+// // //   console.log("DB Connection is successfully established");
+// // // })
+// // // .catch(() => {
+// // //   console.log("Error");
+// // // });
+
+// // app.use(
+// //   cors({
+// //     origin: ["https://deploy-mern-1whq.vercel.app"],
+// //     methods: ["GET", "POST", "PUT", "DELETE"],
+// //     credentials: true,
+// //   })
+// // );
 
 // app.use(
 //   cors({
-//     origin: ["https://deploy-mern-1whq.vercel.app"],
-//     methods: ["GET", "POST", "PUT", "DELETE"],
+//     origin: "*", // Allows all origins
+//     methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"], // Allows all common HTTP methods
 //     credentials: true,
 //   })
 // );
 
-app.use(
-  cors({
-    origin: "*", // Allows all origins
-    methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"], // Allows all common HTTP methods
-    credentials: true,
-  })
-);
+// // app.use(cors());
 
-// app.use(cors());
+// app.get("/", (req, res) => {
+//   res.json("Hello World");
+// });
 
-app.get("/", (req, res) => {
-  res.json("Hello World");
-});
+// // Define Routes
+// app.use("/api/auth", require("./routes/auth"));
+// app.use("/api/contacts", require("./routes/contacts"));
 
-// Define Routes
-app.use("/api/auth", require("./routes/auth"));
-app.use("/api/contacts", require("./routes/contacts"));
+// // const PORT = process.env.PORT || 3000;
 
-// const PORT = process.env.PORT || 3000;
-
-app.listen(5000, () => {
-  console.log(`App is listening on port 5000`);
-});
+// app.listen(5000, () => {
+//   console.log(`App is listening on port 5000`);
+// });
