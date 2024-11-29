@@ -8,6 +8,8 @@ dotenv.config({ path: "./config.env" });
 const cors = require("cors");
 const app = express();
 
+app.use(cors());
+
 app.use(express.json());
 
 const DB = process.env.DATABASE.replace(
@@ -28,8 +30,6 @@ mongoose
   .catch(() => {
     console.log("Error");
   });
-
-app.use(cors());
 
 app.get("/", (req, res) => {
   res.json("Hello World");
