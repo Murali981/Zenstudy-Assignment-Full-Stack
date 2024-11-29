@@ -31,8 +31,7 @@ mongoose
 
 app.use(
   cors({
-    origin:
-      "https://zenstudy-assignment-full-stack-la3w-q04915t8e.vercel.app/login",
+    origin: "https://zenstudy-assignment-full-stack-la3w-q04915t8e.vercel.app/",
     methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"], // Allows all common HTTP methods
     credentials: true,
   })
