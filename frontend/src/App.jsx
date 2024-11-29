@@ -8,7 +8,7 @@ import {
 import Register from "./components/Register";
 import Login from "./components/Login";
 import Dashboard from "./components/Dashboard";
-import "./app.css";
+
 import { Toaster } from "react-hot-toast";
 
 const PrivateRoute = ({ children }) => {
