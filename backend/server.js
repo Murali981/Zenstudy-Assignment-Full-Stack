@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
-// const dotenv = require("dotenv");
+const dotenv = require("dotenv");
 
-// dotenv.config({ path: "./config.env" });
+dotenv.config({ path: "./config.env" });
 
 const app = require("./app");
 
@@ -43,6 +43,10 @@ app.use(
     credentials: true,
   })
 );
+
+app.get("/", (req, res) => {
+  res.json("Hello World");
+});
 
 // Define Routes
 app.use("/api/auth", require("./routes/auth"));
