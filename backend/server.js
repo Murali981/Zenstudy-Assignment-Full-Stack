@@ -26,7 +26,13 @@ mongoose
     console.log("Error");
   });
 
-app.use(cors());
+app.use(
+  cors({
+    origin: ["https://deploy-mern-1whq.vercel.app"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
 
 // Define Routes
 app.use("/api/auth", require("./routes/auth"));
