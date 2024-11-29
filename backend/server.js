@@ -36,13 +36,15 @@ mongoose.connect(
 //   console.log("Error");
 // });
 
-app.use(
-  cors({
-    origin: ["https://deploy-mern-1whq.vercel.app"],
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
-  })
-);
+// app.use(
+//   cors({
+//     origin: ["https://deploy-mern-1whq.vercel.app"],
+//     methods: ["GET", "POST", "PUT", "DELETE"],
+//     credentials: true,
+//   })
+// );
+
+app.use(cors());
 
 app.get("/", (req, res) => {
   res.json("Hello World");
