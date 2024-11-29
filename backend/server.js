@@ -44,7 +44,15 @@ mongoose.connect(
 //   })
 // );
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "*", // Allows all origins
+    methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"], // Allows all common HTTP methods
+    credentials: true,
+  })
+);
+
+// app.use(cors());
 
 app.get("/", (req, res) => {
   res.json("Hello World");
